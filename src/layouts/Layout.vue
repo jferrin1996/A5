@@ -37,7 +37,6 @@
           :label="nav.label" />
       </q-tabs>
     </q-footer>
-
     <q-drawer
       v-model="leftDrawerOpen"
       :breakpoint="767"

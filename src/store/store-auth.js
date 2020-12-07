@@ -17,7 +17,7 @@ const actions = {
 		Loading.show()
 		firebaseAuth.createUserWithEmailAndPassword(payload.email, payload.password)
 			.then(response => {
-				console.log('response: ', response)
+                console.log('response: ', response)
 			})
 			.catch(error => {
 				showErrorMessage(error.message) 
@@ -33,14 +33,11 @@ const actions = {
 				showErrorMessage(error.message)
 			})
 	},
-	
 	logoutUser() {
 		console.log('logoutUser')
 		firebaseAuth.signOut()
 	},
-		
 	handleAuthStateChange({ commit, dispatch }) {
-		
 		firebaseAuth.onAuthStateChanged(user=> {
 			Loading.hide()
 			if (user) {
@@ -50,16 +47,11 @@ const actions = {
 				dispatch ('tasks/fbReadData',null, { root:true })
 			}
 			else {
-				
-				
 		  		commit('setLoggedIn', false)
 		  		LocalStorage.set('loggedIn', false)
 		  		this.$router.replace('/auth')
 			}
-
-
 		})
-
 	}
 }
 

@@ -70,7 +70,7 @@
 					else {
 						this.registerUser(this.formData)
 					}
-				}
+                }
 			}
 		},
 		filters: {

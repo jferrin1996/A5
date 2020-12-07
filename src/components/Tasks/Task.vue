@@ -75,10 +75,11 @@
   export default {
     props: ['task', 'id'],
     data() {
-  	return {
+  	    return {
     	    showEditTask: false
   	}
     },
+
     methods: {
       ...mapActions('tasks', ['updateTask', 'deleteTask']),
       promptToDelete(id) {
